@@ -43,7 +43,7 @@ const Login = () => {
                 setTimeout(()=>{
                     navigate('/');
                     window.location.reload();
-                },1000)
+                },500)
                 
             }else {
                 const details=error?.details[0].message;
