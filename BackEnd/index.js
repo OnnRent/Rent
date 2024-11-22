@@ -2,7 +2,7 @@ const express =require('express')
 const app=express();
 const bodyParser=require('body-parser');
 const cors=require('cors');
-const AuthRouter =require('./Routes/AuthRouter')
+const AuthRouter =require('./Routes/AuthRouter').default
 
 
 require('dotenv').config();
