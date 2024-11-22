@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url ="http://localhost:8080/auth/login";
+            const url ="https://rent-api-pi.vercel.app/login";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{

@@ -29,7 +29,7 @@ const Signup = () => {
         const {name, email , password}=signUpInfo;
 
         try{
-            const url ="http://localhost:8080/authsignup";
+            const url ="https://rent-api-pi.vercel.app/signup";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
