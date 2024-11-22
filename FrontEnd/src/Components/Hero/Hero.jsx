@@ -30,17 +30,16 @@ const Hero = () => {
   }, []);
 
   const handleGetStarted = () => {
-    // if (!isLoggedIn) {
-    //   // If not logged in, navigate to signup page
-    //   setTimeout(() => {
-    //     navigate('/Signup');
-    //   }, 100);
-    // } else {
-    //   setTimeout(() => {
-    //     navigate('/collections');
-    //   }, 100);
-    // }
-    navigate('/collections');
+    if (!isLoggedIn) {
+      // If not logged in, navigate to signup page
+      setTimeout(() => {
+        navigate('/Signup');
+      }, 100);
+    } else {
+      setTimeout(() => {
+        navigate('/collections');
+      }, 100);
+    }
   };
 
 
