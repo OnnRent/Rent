@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url ="https://rent-gamma.vercel.app//auth/login";
+            const url ="http://localhost:8080/auth/login";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
@@ -42,10 +42,12 @@ const Login = () => {
                 handleSuccess(message);
                 setTimeout(()=>{
                     navigate('/');
-                },1000)
+                    window.location.reload();
+                },100)
                 
             }else {
                 const details=error?.details[0].message;
+                console.log(details);
                 handleError(details);
             }
         }catch (err){

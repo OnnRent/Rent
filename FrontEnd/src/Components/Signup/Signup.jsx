@@ -29,7 +29,7 @@ const Signup = () => {
         const {name, email , password}=signUpInfo;
 
         try{
-            const url ="https://rent-gamma.vercel.app/auth/signup";
+            const url ="http://localhost:8080/authsignup";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{

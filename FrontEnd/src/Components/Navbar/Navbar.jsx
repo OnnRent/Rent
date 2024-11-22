@@ -6,24 +6,22 @@ import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Default state is false
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   // Check if user is logged in based on token in localStorage
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      setIsLoggedIn(true); // If token exists, user is logged in
+      setIsLoggedIn(true); 
     }
   }, []); // Empty dependency array to run only on mount
-
-
 
   // Listen for changes in localStorage to update the isLoggedIn state
   useEffect(() => {
     const handleStorageChange = () => {
       const token = localStorage.getItem('token');
-      setIsLoggedIn(!token);  // Update state based on token presence
+      setIsLoggedIn(!!token); // Update state based on token presence
     };
 
     window.addEventListener('storage', handleStorageChange);
@@ -71,7 +69,9 @@ const Navbar = () => {
   return (
     <div className='relative top-0 w-full z-10'>
       <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-white'>
-        <NavLink to='/'><p className='font-semibold cursor-pointer'>OnnRent.com</p></NavLink>
+        <NavLink to='/'>
+          <p className='font-semibold cursor-pointer'>OnnRent.com</p>
+        </NavLink>
 
         <div className='md:hidden w-7'>
           <FontAwesomeIcon icon={faBars} className="cursor-pointer" onClick={toggleMenu} />
