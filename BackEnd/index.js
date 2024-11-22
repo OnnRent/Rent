@@ -18,7 +18,11 @@ app.get('/ping',(req,res)=>{
 
 app.use(bodyParser.json());
 //Allow request from different port
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+    origin: 'https://rent-ui.vercel.app/',
+    credentials: true,
+  }));
 
 app.use('/auth',AuthRouter)
 

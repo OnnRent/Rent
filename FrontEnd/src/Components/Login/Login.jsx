@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url ="https://rent-api-pi.vercel.app/login";
+            const url ="http://localhost:8080/auth/login";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
@@ -43,7 +43,7 @@ const Login = () => {
                 setTimeout(()=>{
                     navigate('/');
                     window.location.reload();
-                },100)
+                },1000)
                 
             }else {
                 const details=error?.details[0].message;
