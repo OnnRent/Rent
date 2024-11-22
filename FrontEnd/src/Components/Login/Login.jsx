@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url ="http://localhost:8080/auth/login";
+            const url ="https://rentapi.vercel.app/auth/login";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
