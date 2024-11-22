@@ -29,7 +29,7 @@ const Signup = () => {
         const {name, email , password}=signUpInfo;
 
         try{
-            const url ="https://rent-api-pi.vercel.app/signup";
+            const url ="https://rent-six-phi.vercel.app/auth/signup";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
