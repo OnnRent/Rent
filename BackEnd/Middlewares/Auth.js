@@ -1,20 +1,20 @@
+const jwt = require('jsonwebtoken');
 
-const jwt=require("jsonwebtoken")
-const ensureAuthenticated=(res,req,next)=>{
-    const auth =req.header['authorization'];
-    if(!auth){
+const ensureAuthenticated = (req, res, next) => {
+    const auth = req.headers['authorization']; // Fix: access headers correctly
+    if (!auth) {
         return res.status(403)
-            .json({message:"Unauthorized, JWT token is require"});
+            .json({ message: "Unauthorized, JWT token is required" });
     }
-    try{
-        const decoded=jwt.verify(auth, process.env.JWT_SECRET);
-        req.user=decoded;
-        next();
-
-    }catch(err){
+    try {
+        const token = auth.split(' ')[1]; // If the token is prefixed with "Bearer ", we split it
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded; // Attach decoded user data to req
+        next(); // Proceed to next middleware/handler
+    } catch (err) {
         return res.status(403)
-            .json({message:"Unauthorized, JWT token is wrong or expired"});
+            .json({ message: "Unauthorized, JWT token is invalid or expired" });
     }
 }
 
-module.exports=ensureAuthenticated;
+module.exports = ensureAuthenticated;
