@@ -1,9 +1,10 @@
 import React from 'react'
-import PageHeader from '../PageHeader/PageHeader'
-import QuestionCard from '../QuestionCard/QuestionCard'
+import PageHeader from '../../Components/PageHeader/PageHeader'
+import QuestionCard from '../../Components/QuestionCard/QuestionCard'
 
 const FAQ = () => {
   return (
+    
     <div className="container mx-auto py-3 px-6 md:px-20 lg:px-32 bg-white text-black">
         <PageHeader location="HOME / FAQ" description="Frequently Asked Questions"/>
 

@@ -18,7 +18,6 @@ const Signup = () => {
 
     const handleChange=(e)=>{
         const {name,value}=e.target;
-        console.log(name,value);
         const copysignUpInfo ={...signUpInfo};
         copysignUpInfo[name]=value;
         setSignUpInfo(copysignUpInfo)
@@ -28,7 +27,6 @@ const Signup = () => {
     const handleSignUp=async (e)=>{
         e.preventDefault();
         const {name, email , password}=signUpInfo;
-        console.log(signUpInfo);
 
         try{
             const url ="http://localhost:8080/auth/signup";
@@ -50,7 +48,6 @@ const Signup = () => {
                 const details=error?.details[0].message;
                 handleError(details);
             }
-            console.log(result);
         }catch (err){
             handleError(err);
         }

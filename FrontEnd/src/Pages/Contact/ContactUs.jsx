@@ -1,6 +1,6 @@
 import React from 'react'
-import PageHeader from '../PageHeader/PageHeader'
-import ContactCard from '../ContactCard/ContactCard'
+import PageHeader from '../../Components/PageHeader/PageHeader'
+import ContactCard from '../../Components/ContactCard/ContactCard'
 
 const ContactUs = () => {
   return (

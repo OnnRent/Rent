@@ -17,7 +17,6 @@ const Login = () => {
 
     const handleChange=(e)=>{
         const {name,value}=e.target;
-        console.log(name,value);
         const copyloginInfo ={...loginInfo};
         copyloginInfo[name]=value;
         setloginInfo(copyloginInfo)
@@ -49,7 +48,6 @@ const Login = () => {
                 const details=error?.details[0].message;
                 handleError(details);
             }
-            console.log(result);
         }catch (err){
             handleError(err);
         }

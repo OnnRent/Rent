@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { handleError } from '../../util';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,12 +11,27 @@ const Navbar = () => {
 
   // Check if user is logged in based on token in localStorage
   useEffect(() => {
-    // When the component mounts, check for the token in localStorage
     const token = localStorage.getItem('token');
     if (token) {
-      setIsLoggedIn(true);  // If token exists, user is logged in
+      setIsLoggedIn(true); // If token exists, user is logged in
     }
   }, []); // Empty dependency array to run only on mount
+
+
+
+  // Listen for changes in localStorage to update the isLoggedIn state
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const token = localStorage.getItem('token');
+      setIsLoggedIn(!token);  // Update state based on token presence
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   const handleLoginLogout = () => {
     if (!isLoggedIn) {

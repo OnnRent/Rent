@@ -1,7 +1,7 @@
 import React from 'react';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../../Components/PageHeader/PageHeader';
 import chooseImage from '../../assets/choose.png';
-import InfoCard from '../InfoCard/InfoCard';
+import InfoCard from '../../Components/InfoCard/InfoCard';
 
 const AboutUs = () => {
   return (
