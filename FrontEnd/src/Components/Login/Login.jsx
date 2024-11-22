@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url ="https://rent-six-phi.vercel.app/login";
+            const url ="https://rent-six-phi.vercel.app/auth/login";
             const response = await fetch(url,{
                 method:"POST",
                 headers:{
