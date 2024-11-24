@@ -17,7 +17,7 @@ const VehicleDisplayCard = (props) => {
         <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">{props.title}</h3>
         <p className="font-normal text-gray-700">{props.description}</p>
         
-        <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900">{props.price}</h5>
+        <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900">Rs. {props.price}/day</h5>
         
         {/* Container for the button and quantity */}
         <div className="mt-4 flex items-center justify-between w-full">
