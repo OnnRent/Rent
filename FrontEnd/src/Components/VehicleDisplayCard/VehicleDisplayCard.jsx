@@ -16,15 +16,24 @@ const VehicleDisplayCard = (props) => {
       <div className="p-5">
         <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">{props.title}</h3>
         <p className="font-normal text-gray-700">{props.description}</p>
+        
         <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900">{props.price}</h5>
         
-        {/* Book Now button */}
-        <button
-          onClick={handleBookNow}
-          className="mt-4 px-6 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-200"
-        >
-          Book Now
-        </button>
+        {/* Container for the button and quantity */}
+        <div className="mt-4 flex items-center justify-between w-full">
+          {/* Book Now button */}
+          <button
+            onClick={handleBookNow}
+            className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-200"
+          >
+            Book Now
+          </button>
+
+          {/* Quantity Left */}
+          <p className="text-sm text-gray-500 ml-4">
+            <strong>{props.quantity} Left</strong>
+          </p>
+        </div>
       </div>
     </div>
   );

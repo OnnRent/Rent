@@ -33,6 +33,7 @@ const Collections = () => {
               image={vehicle.image} // Assuming the image URL is stored in `vehicle.image`
               price={vehicle.price}
               description={vehicle.description}
+              quantity={vehicle.quantity}
             />
           ))
         ) : (
