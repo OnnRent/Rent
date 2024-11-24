@@ -10,7 +10,7 @@ const Collections = () => {
   useEffect(() => {
     const fetchAllVehicles = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/products'); // Update with the correct endpoint
+        const response = await axios.get('https://rentapi.vercel.app/api/products'); // Update with the correct endpoint
         setVehicleData(response.data); // Set the fetched data in the state
       } catch (error) {
         console.error('Error fetching vehicles:', error);
