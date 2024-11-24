@@ -21,18 +21,31 @@ const VehicleDisplayCard = (props) => {
         
         {/* Container for the button and quantity */}
         <div className="mt-4 flex items-center justify-between w-full">
-          {/* Book Now button */}
-          <button
-            onClick={handleBookNow}
-            className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-200"
-          >
-            Book Now
-          </button>
+          {/* Conditional rendering for button */}
+          {props.quantity > 0 ? (
+            <>
+              {/* Book Now button */}
+              <button
+                onClick={handleBookNow}
+                className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-200"
+              >
+                Book Now
+              </button>
 
-          {/* Quantity Left */}
-          <p className="text-sm text-gray-500 ml-4">
-            <strong>{props.quantity} Left</strong>
-          </p>
+              {/* Quantity Left */}
+              <p className="text-sm text-gray-500 ml-4">
+                <strong>{props.quantity} Left</strong>
+              </p>
+            </>
+          ) : (
+            // Show Out of Stock button if quantity is 0
+            <button
+              className="px-6 py-2 rounded-full bg-gray-400 text-white font-semibold cursor-not-allowed"
+              disabled
+            >
+              Out of Stock
+            </button>
+          )}
         </div>
       </div>
     </div>
