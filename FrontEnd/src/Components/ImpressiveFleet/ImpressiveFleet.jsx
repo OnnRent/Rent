@@ -9,7 +9,7 @@ const ImpressiveFleet = () => {
     // Assuming you have the correct backend URL
     const fetchBestSellers = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/products/bestsellers');
+        const response = await fetch('https://rentapi.vercel.app/api/products/bestsellers');
         const data = await response.json();
         setVehicleData(data); // Set the best-seller data in the state
       } catch (error) {
