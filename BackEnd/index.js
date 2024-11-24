@@ -3,6 +3,7 @@ const app=express();
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const AuthRouter =require('./Routes/AuthRouter').default
+const ProductRouter =require('./Routes/ProductRouter').default
 
 
 require('dotenv').config();
@@ -19,7 +20,8 @@ app.get('/ping',(req,res)=>{
 app.use(bodyParser.json());
 //Allow request from different port
 app.use(cors())
-app.use('/auth',AuthRouter)
+app.use('/api',AuthRouter)
+app.use('/api/products', ProductRouter);
 
 
 app.listen(PORT ,() =>{

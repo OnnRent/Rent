@@ -10,7 +10,6 @@ import Login from './Components/Login/Login'
 import Signup from './Components/Signup/Signup'
 import Collections from './Pages/Collections/Collections'
 import 'react-toastify/ReactToastify.css'
-import { useState } from 'react'
 
 
 function App() {
@@ -19,17 +18,18 @@ function App() {
     <div className='font-syne w-full overflow-hidden'>
       
       <BrowserRouter>
-      <Navbar/>
-        <Routes>
-          <Route path="/"   element={<Home/>} />
-          <Route path='/faq' element={<FAQ/>}/>
-          <Route path='/aboutus' element={<AboutUs/>}/>
-          <Route path='/contactus' element={<ContactUs/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/collections' element={<Collections/>}/>
-        </Routes>     
-        <Footer/>
+          <Navbar/>
+          <Routes>
+            <Route path="/"   element={<Home/>} />
+            <Route path='/faq' element={<FAQ/>}/>
+            <Route path='/aboutus' element={<AboutUs/>}/>
+            <Route path='/contactus' element={<ContactUs/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/signup' element={<Signup/>}/>
+            <Route path='/collections' element={<Collections/>}/>
+          </Routes>     
+          <Footer/>
+        
       </BrowserRouter>
     </div>
   )

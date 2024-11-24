@@ -1,10 +1,17 @@
-import { signup, login, getAllUsers } from '../Controllers/AuthController';
-import { signupValidation, loginValidation } from '../Middlewares/AuthValidation';
+// Routes/AuthRouter.js
+import express from 'express';
+import { signupValidation, loginValidation } from '../Middlewares/AuthValidation.js';
+import { signup, login, getAllUsers } from '../Controllers/AuthController.js';
 
-const router=require('express').Router();
+const router = express.Router();
 
-router.post('/signup',signupValidation,signup);
-router.post('/login',loginValidation,login);
+// Signup route with validation middleware
+router.post('/signup', signupValidation, signup);
+
+// Login route with validation middleware
+router.post('/login', loginValidation, login);
+
+// Get all users route (no validation required here)
 router.get('/users', getAllUsers);
 
 export default router;

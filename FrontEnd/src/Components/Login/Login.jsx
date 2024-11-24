@@ -39,8 +39,9 @@ const Login = () => {
             const {success, message ,jwtToken , error}=result;
             localStorage.setItem('token',jwtToken);
             if(success){
-                handleSuccess(message);
+              handleSuccess(message);
                 setTimeout(()=>{
+                    handleSuccess(message);
                     navigate('/');
                     window.location.reload();
                 },500)
